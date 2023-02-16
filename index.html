@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>GreatWin-Lambo</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-wrapper">
+            <img src="assets/OMS_logo.svg" alt="" class="main-logo" w="190" h="36">        
+            <div class="main-texts">
+                <h2>Viimeiseksi jäljellä oleva voittaa</h2>
+                <h1>Lamborghini Huracan</h2>
+            </div>                          
+            <div class="counter-container">
+                <h3>Starting date 20th of January</h3>
+                <div class="counter-container_labels">
+                <div class="counter-container_labels-container">
+                    <p class="counter-container_labels-container-number day"></p>
+                    <p class="counter-container_labels-container-text">days</p>
+                </div>
+                <div class="counter-container_labels-container">
+                    <p class="counter-container_labels-container-number hour"></p>
+                    <p class="counter-container_labels-container-text"> hours</p>
+                </div>
+                <div class="counter-container_labels-container">
+                    <p class="counter-container_labels-container-number minute"></p>
+                    <p class="counter-container_labels-container-text">minutes</p>
+                </div>
+                <div class="counter-container_labels-container">
+                    <p class="counter-container_labels-container-number seconds">  </p>
+                    <p class="counter-container_labels-container-text">seconds</p>
+                </div>
+            </div>
+            </div>  
+            <button class="main-button">
+              Gioca aora
+            </button>
+            <img src="assets/Header_group_OMS.png" alt="" class="main-image">
+
+            <div class="steps">
+                <h2 class="steps-title">Näin voit voittaa sen:</h2>
+                <div class="steps-container">
+                <div class="step">
+                    <img src="assets/1.svg" alt="" class="step-image">
+                    <h2>Aseta joka 
+                        päivä vähintään yksi 
+                        kasinopanos tai urheiluveto</h2>
+                </div>
+                <div class="step">
+                    <img src="assets/2.svg" alt="" class="step-image">
+                    <h2>Jatka samaa,kunnes olet 
+                        ainoa jäljellä oleva</h2>
+                </div>
+                <div class="step">
+                    <img src="assets/3.svg" alt="" class="step-image">
+                    <h2>Hyppää tämän 
+                        upean Lambon kyytiin</h2>
+                </div>
+            </div>
+            </div>
+
+            <div class="bottom-gallery">
+                <h2>Palkinto yksityiskohtaisesti:</h2>
+                <video src=""></video>
+
+            <div class="image-gallery">
+
+                <img src="" alt="" class="left-arrow">
+                <img src="" alt="" class="right-arrow">
+            </div>
+
+            <footer>
+                <p>Copyright “Lorem ipsum” 2099 | </p>
+                <a>Ehdot</a> 
+            </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+        const countDown = () => {
+          const countDate = new Date(
+            "March 20 , 2024 00:00:00"
+          ).getTime();
+          const now = new Date().getTime();
+          const gap = countDate - now;
+
+          const second = 1000;
+          const minute = second * 60;
+          const hour = minute * 60;
+          const day = hour * 24;
+
+          const textDay = Math.floor(gap / day);
+          const textHour = Math.floor((gap % day) / hour);
+          const textMinutes = Math.floor((gap % hour) / minute);
+          const textSeconds = Math.floor((gap % minute) / second);
+
+          function prependZero(textSeconds) {
+            if (textSeconds < 10) return "0" + textSeconds;
+            else return textSeconds;
+          }
+
+          function prependZero1(textMinutes) {
+            if (textMinutes < 10) return "0" + textMinutes;
+            else return textMinutes;
+          }
+
+          function prependZero2(textHour) {
+            if (textHour < 10) return "0" + textHour;
+            else return textHour;
+          }
+
+          function prependZero3(textDay) {
+            if (textDay < 10) return "0" + textDay;
+            else return textDay;
+          }
+
+          document.querySelector(".day").innerText = prependZero3(textDay);
+          document.querySelector(".hour").innerText =
+            prependZero2(textHour);
+          document.querySelector(".minute").innerText =
+            prependZero1(textMinutes);
+          document.querySelector(".seconds").innerText =
+            prependZero(textSeconds);
+        };
+
+        setInterval(countDown, 1000);
+      </script>
+    
+</body>
+</html>
